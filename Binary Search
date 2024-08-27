@@ -1,0 +1,29 @@
+// Binary Search...
+import java.util.*;
+ public class Array1{
+         static int ar(int arr[],int key){
+        int strt= 0;
+        int end = arr.length-1;
+        while(strt<=end){
+            int mid = (strt+end)/2;
+            if(arr[mid]==key){
+                return mid;
+            }
+            if(arr[mid]<key){
+                strt=mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return -1;
+         }
+  public static void main(String []args){
+      Scanner s = new Scanner(System.in);
+      System.out.println("Enter the Element to be Searched..");
+      int key= s.nextInt();
+      int arr[]={1,2,3,6,5,9,7,8};
+      int a=ar(arr,key);
+      System.out.println("Index is: "+a);
+  }
+ }
+ 
